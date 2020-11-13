@@ -12,6 +12,7 @@ Note this is incomplete and a **WIP**!
 6. Introduce functionalities which seperate the program from just a fancy text editor, such as identifier attribute collision detection
 7. Helpful information boxes to describe attributes and their meaning
 
+See the [projects page](https://github.com/nullmaton/DeepParser/projects/1) for info on progress.
 
 ### Release
 When the initial project is up to standard, I will release it to the Community, with the hopes of allowing other programmers to help further develop the application for each new update of the base game. Note that when the project's first version is officially released, not all of the game's moddable content will be included.
