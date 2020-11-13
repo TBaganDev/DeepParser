@@ -1,11 +1,13 @@
 package main;
 
 import data.MetaData;
+import ui.menu.EditMenu;
+import ui.menu.FileMenu;
+import ui.menu.HelpMenu;
+import ui.menu.ViewMenu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Window extends JFrame {
     private MetaData meta;
@@ -23,9 +25,13 @@ public class Window extends JFrame {
         viewer = new JPanel();
         pane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, tree, viewer);
 
+        pane.setDividerLocation(300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setVisible(true);
-        setSize(500,500);
+        //setSize(App.getScreenDimension().width/2, App.getScreenDimension().height);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+
         setLayout(new BorderLayout());
         container = getContentPane();
 
@@ -47,21 +53,10 @@ public class Window extends JFrame {
     }
 
     private void loadMenus() {
-        Menu fileMenu = new Menu("File");
-        MenuItem base = new MenuItem("Open Base");
-        MenuItem mod = new MenuItem("Open Mod");
-        MenuItem settings = new MenuItem("Settings");
-
-        base.addActionListener((ActionEvent e) -> {
-            int[] test = new int[-1];
-        });
-        fileMenu.add(base);
-        fileMenu.add(mod);
-        fileMenu.addSeparator();
-        fileMenu.add(settings);
-        Menu helpMenu = new Menu("Help");
-        bar.add(fileMenu);
-        bar.add(helpMenu);
+        bar.add(new FileMenu());
+        bar.add(new EditMenu());
+        bar.add(new ViewMenu());
+        bar.setHelpMenu(new HelpMenu());
     }
 
     private void loadTree() {
@@ -73,13 +68,12 @@ public class Window extends JFrame {
     }
 
     public void resetColors() {
-        Color back = meta.getBackground();
         Color fore = meta.getForeground();
         Font font = meta.getFont();
 
-        container.setBackground(back);
+        container.setBackground(meta.getViewBackground());
         container.setFont(font);
-        viewer.setBackground(back);
-        tree.setBackground(back);
+        viewer.setBackground(meta.getViewBackground());
+        tree.setBackground(meta.getTreeBackground());
     }
 }
