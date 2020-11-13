@@ -32,8 +32,13 @@ public class Window extends JFrame {
 
         //MenuBar Components
         Menu menu = new Menu("File");
-        MenuItem item = new MenuItem("Open Base");
-        menu.add(item);
+        MenuItem base = new MenuItem("Open Base");
+        MenuItem mod = new MenuItem("Open Mod");
+        MenuItem settings = new MenuItem("Settings");
+        menu.add(base);
+        menu.add(mod);
+        menu.addSeparator();
+        menu.add(settings);
         bar.add(menu);
 
         //Tree Components
