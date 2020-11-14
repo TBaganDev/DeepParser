@@ -4,7 +4,7 @@ Program to parse and edit Barotrauma Content Packages, providing an improved Bar
 Note this is incomplete and a **WIP**!
 
 ### Project Aims
-1. Create a simple text-editor style ui, akin to Atom, Eclipse, IntelliJ or Visual Studio
+1. ~~Create a simple text-editor style ui, akin to Atom, Eclipse, IntelliJ or Visual Studio~~
 2. Implement a XML Parser
 3. Begin to create Data Structures to manage file-read Barotrauma Game Objects - i.e: Items, Characters, Texts (etc)
 4. Introduce a Config file for altering the DeepParser Editor itself

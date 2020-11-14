@@ -30,6 +30,10 @@ public class FileMenu extends AbstractMenu {
         exit.addActionListener((ActionEvent e) -> {
             App.exit();
         });
-        layout(open, save, saveAs, null, settings, exit);
+        MenuItem refresh = new MenuItem("Reload Files");
+        refresh.addActionListener((ActionEvent e) -> {
+            App.getWindow().getTree().refresh();
+        });
+        layout(open, save, saveAs, null, refresh,  null, settings, exit);
     }
 }
