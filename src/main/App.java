@@ -11,6 +11,7 @@ public class App {
     private static Window window;
     private static MetaData meta = new MetaData();
     private static Dimension screenDimension = Toolkit.getDefaultToolkit().getScreenSize();
+    private static Boolean isExited = false;
 
     public static void main(String[] args) {
 
@@ -65,7 +66,10 @@ public class App {
             @Override
             public void run() {
                 App.dispose();
+                isExited = true;
             }
         };
     }
+
+    public static boolean isExited() { return isExited; }
 }
